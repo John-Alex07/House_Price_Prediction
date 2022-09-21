@@ -5,6 +5,7 @@
 2. [VSCodeIDE]
 3. [HerokuAccount] (https://dashboard.heroku.com)
 4. [Postman]
+5. [JSON_Validator](https://jsonformatter.curiousconcept.com/#)
 Create A New Environment
 
 ```
