@@ -3,16 +3,25 @@
 <head>
   <style>
     .gfg {
-    background-color: white;
-    border: 2px solid black;
-    color: green;
+    background-color: rgb(211, 211, 211);
+    border: 3px solid black;
+    color: rgb(24, 19, 46);
     padding: 5px 10px;
     text-align: center;
     display: inline-block;
-    font-size: 20px;
+    font-size: 15px;
     margin: 10px 30px;
-    cursor: pointer;
     }
+    .btn {
+      background-color: black;
+      border: 2px solid black;
+      color: white;
+      padding: 8px 12px;
+      text-align: left;
+      display: inline-block;
+      font-size: 15px;
+      margin: 15px 30px;
+      }
 </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -73,24 +82,59 @@
     Submit
   </button>
 </form>-->
-<form action="{{ url_for('predict')}}"method="post">
-  <input type="text" name="CRIM" placeholder="CRIM" required="required" /><br>
-  <input type="text" name="ZN" placeholder="ZN" required="required" /><br>
-    <input type="text" name="INDUS" placeholder="INDUS" required="required" /><br>
-    <input type="text" name="CHAS" placeholder="CHAS" required="required" /><br>
-    <input type="text" name="NOX" placeholder="NOX" required="required" /><br>
-    <input type="text" name="RM" placeholder="RM" required="required" /><br>
-    <input type="text" name="Age" placeholder="Age" required="required" /><br>
-    <input type="text" name="DIS" placeholder="DIS" required="required" /><br>
-    <input type="text" name="RAD" placeholder="RAD" required="required" /><br>
-    <input type="text" name="TAX" placeholder="TAX" required="required" /><br>
-    <input type="text" name="PTRATIO" placeholder="PTRATIO" required="required" /><br>
-    <input type="text" name="B" placeholder="B" required="required" /><br>
-    <input type="text" name="LSTAT" placeholder="LSTAT" required="required" /><br>
-    <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+
+<!-- <strong>
+  - CRIM   per capita crime rate by town
+  <br>
+  - ZN       proportion of residential land zoned for lots over 25,000 sq.ft.
+  <br>
+  - INDUS    proportion of non-retail business acres per town
+  <br>
+  - CHAS     Charles River dummy variable (= 1 if tract bounds river; 0 otherwise)
+  <br>
+  - NOX      nitric oxides concentration (parts per 10 million)
+  <br>
+  - RM       average number of rooms per dwelling
+  <br>
+  - AGE      proportion of owner-occupied units built prior to 1940
+  <br>
+  - DIS      weighted distances to five Boston employment centres
+  <br>
+  - RAD      index of accessibility to radial highways
+  <br>
+  - TAX      full-value property-tax rate per $10,000
+  <br>
+  - PTRATIO  pupil-teacher ratio by town
+  <br>
+  - B        1000(Bk - 0.63)^2 where Bk is the proportion of black people by town
+  <br>
+  - LSTAT    % lower status of the population
+</strong> -->
+<div>
+<form class="gfg" action="{{ url_for('predict')}}"method="post">
+  per Capita Crime Rate by Town <br> <input type="text" name="CRIM" placeholder="CRIM" required="required" /> <br><hr>
+  proportion of residential land zoned for lots over 25,000 sq.ft. <br><input type="text" name="ZN" placeholder="ZN" required="required" /><br><hr>
+  proportion of non-retail business acres per town<br><input type="text" name="INDUS" placeholder="INDUS" required="required" /><br><hr>
+  Charles River dummy variable (= 1 if tract bounds river; 0 otherwise)<br><input type="text" name="CHAS" placeholder="CHAS" required="required" /><br><hr>
+  nitric oxides concentration (parts per 10 million)<br><input type="text" name="NOX" placeholder="NOX" required="required" /><br><hr>
+  average number of rooms per dwelling<br><input type="text" name="RM" placeholder="RM" required="required" /><br><hr>
+  proportion of owner-occupied units built prior to 1940 <br> <input type="text" name="Age" placeholder="Age" required="required" /><br><hr>
+  weighted distances to five Boston employment centres<br>  <input type="text" name="DIS" placeholder="DIS" required="required" /><br><hr>
+  index of accessibility to radial highways<br>  <input type="text" name="RAD" placeholder="RAD" required="required" /><br><hr>
+  full-value property-tax rate per $10,000<br>  <input type="text" name="TAX" placeholder="TAX" required="required" /><br><hr>
+  pupil-teacher ratio by town<br>  <input type="text" name="PTRATIO" placeholder="PTRATIO" required="required" /><br><hr>
+  1000(Bk - 0.63)^2 where Bk is the proportion of black people by town<br>  <input type="text" name="B" placeholder="B" required="required" /><br><hr>
+  % lower status of the population<br>  <input type="text" name="LSTAT" placeholder="LSTAT" required="required" /><br><hr>
+    <button type="submit" class="btn">Predict</button><hr>
 </form>
 <br>
 <br>
+</div>
+<hr>
+<br><br>
 {{prediction_text}}
+<br>
+<br><br>
+<hr>
 </body>
 </html>
